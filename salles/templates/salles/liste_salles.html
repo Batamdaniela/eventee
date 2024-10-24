@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des salles</title>
+    <link href="{%static 'css/output.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <h1 class="text-3xl">Liste des salles de fête</h1>
+    <ul>
+        {% for salle in salles %}
+            <li class="bg-white p-4 rounded shadow-md mt-4">
+                {{ salle.nom }} - {{ salle.localisation }} - {{ salle.capacite }} - {{salle.prix}} XAF
+            </li>
+        {% empty %}
+            <li class="text-center text-gray-500">Aucune salle disponible.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
